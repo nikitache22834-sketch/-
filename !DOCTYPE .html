@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Факты космоса</title>
+  <style>
+    body {
+      background: #0d0f1a;
+      font-family: Arial, sans-serif;
+      color: #e0e0f0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #b8a9ff;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+    .nav button {
+      padding: 10px 20px;
+      background: #1e1a3a;
+      color: #ddd;
+      border: 1px solid #5a4e9e;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .nav button.active {
+      background: #5648c0;
+      color: white;
+      border-color: #b8a9ff;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .card {
+      background: #181836;
+      border: 1px solid #3a3480;
+      border-radius: 16px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+    }
+    .card h3 {
+      color: #ffd966;
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #7777aa;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🌌 Факты космоса</h1>
+
+  <!-- Навигация -->
+  <div class="nav">
+    <button id="btnHome" class="active" onclick="show('home')">🏠 Главная</button>
+    <button id="btnPlanets" onclick="show('planets')">🪐 Планеты</button>
+    <button id="btnStars" onclick="show('stars')">⭐ Звёзды</button>
+  </div>
+
+  <!-- Раздел Главная -->
+  <div id="home" class="section active">
+    <div class="cards">
+      <div class="card"><h3>🚀 Тишина</h3><p>В космосе звук не распространяется — там абсолютная тишина.</p></div>
+      <div class="card"><h3>🌍 Голубая точка</h3><p>С расстояния 6 млрд км Земля выглядит как бледно-голубая точка.</p></div>
+      <div class="card"><h3>⏳ День на Венере</h3><p>День на Венере длится дольше, чем год — 243 земных дня.</p></div>
+    </div>
+  </div>
+
+  <!-- Раздел Планеты -->
+  <div id="planets" class="section">
+    <div class="cards">
+      <div class="card"><h3>☿️ Меркурий</h3><p>Днём +430°C, ночью -180°C.</p></div>
+      <div class="card"><h3>♀️ Венера</h3><p>Самая горячая планета: +462°C из-за плотной атмосферы.</p></div>
+      <div class="card"><h3>🔴 Марс</h3><p>Вулкан Олимп — 21,9 км, самый высокий в системе.</p></div>
+      <div class="card"><h3>🪐 Сатурн</h3><p>Его плотность меньше воды — мог бы плавать в океане.</p></div>
+    </div>
+  </div>
+
+  <!-- Раздел Звёзды -->
+  <div id="stars" class="section">
+    <div class="cards">
+      <div class="card"><h3>☀️ Солнце</h3><p>99,8% массы всей Солнечной системы.</p></div>
+      <div class="card"><h3>💫 Нейтронные звёзды</h3><p>Чайная ложка вещества весит 6 млрд тонн.</p></div>
+      <div class="card"><h3>🌟 Сириус</h3><p>Ярчайшая звезда ночного неба, двойная система.</p></div>
+    </div>
+  </div>
+
+  <footer>🚀 Космос огромен — продолжайте изучать!</footer>
+</div>
+
+<script>
+  function show(sectionId) {
+    document.querySelectorAll('.section').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.nav button').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+    document.getElementById('btn' + sectionId.charAt(0).toUpperCase() + sectionId.slice(1)).classList.add('active');
+  }
+</script>
+</body>
+</html>
